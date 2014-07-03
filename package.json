@@ -1,0 +1,28 @@
+{
+  "name": "image-progress",
+  "version": "0.0.1",
+  "description": "A wrapper for loading image via XHR and dispatching loading events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayamflow/image-progress"
+  },
+  "keywords": [
+    "image",
+    "progress",
+    "ajax",
+    "xhr",
+    "load"
+  ],
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayamflow/image-progress/issues"
+  },
+  "devDependencies": {
+    "component-emitter": "~1.1.3"
+  }
+}
