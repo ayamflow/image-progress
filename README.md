@@ -42,14 +42,14 @@ img.on('start', function(event) {
 img.load();
 ```
 
-By default, the `event.progress` only has 2 decimals. You can set the number of decimals by setting the `leading` property like this: `imgProgress.leading = 4;`
+By default, the `event.progress` only has 2 decimals. You can set the number of decimals by passing the `leading` property as an instanciation option.
 
 ## Methods
 * ### `new Progress(url, params)`
 
 `url`: the URL for the image you want to load.
 
-`params`: the params hash is used if you need to store & retrieve any property on the `start` & `load` events.
+`params`: the params hash is used if you need to store & retrieve any property on the `start` & `load` events. You can also pass different options there (see the options section below).
 
 * ### `load()`
 
@@ -59,9 +59,17 @@ Starts the loading. It will fire a `start` event.
 
 Removes all internal & external listeners, and clears the XHR object.
 
-By default, this method is called after the `load` and/or `error` events are triggered. you can disable this behavior by setting `progress.autoclear = false;`
+By default, this method is called after the `load` and/or `error` events are triggered. you can disable this behavior by passing the `autoclear: false` as an instanciation option.
 
-## Properties
+## Instanciation options
+* ### `onStart`, `onError`, `onProgress`, `onLoad` (default: null)
+
+Callbacks to be called when the appropriate events are fired.
+
+* ### `autoload` (default: false)
+
+Wether the loading should start automatically on instanciation. If you set it to `true`, be sure to also pass `onProgress`/`onLoad` callbacks as well or you won't be able to listen for completion.
+
 * ### `leading` (default: 2)
 
 The number of decimals in the `event.progress` property.
@@ -70,9 +78,13 @@ The number of decimals in the `event.progress` property.
 
 Set wether the `destroy` method should be automatically called after a `load` or `error` event.
 
-
 ## Events
-* `start`: fired when the loading starts. The event contains a reference to the `params` hash, as well as the `url`.
+* `start`: fired when the loading starts. The event contains a reference to the `options` hash, as well as the `url`.
 * `progress`: fired each time the XHR request updates. The event has 3 properties: `loaded`, `total` and `progress`.
-* `load'`: fired when the loading is complete. The event contains a reference to the `params` hash, as well as the `url`.
+* `load'`: fired when the loading is complete. The event contains a reference to the `options` hash, as well as the `url`.
 * `error`: fired when a network-related error is raised.
+
+## Properties
+* ### `total`: the total bytes to load
+* ### `loaded`: the loaded bytes loaded
+* ### `progress`: the loading progress, between 0 and 1
