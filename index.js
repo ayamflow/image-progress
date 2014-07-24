@@ -71,5 +71,5 @@ ImageProgress.prototype.destroy = function(event) {
     this.request.onload = null;
     this.request.onerror = null;
     this.request = null;
-    this.off();
+    this.removeAllListeners();
 };
