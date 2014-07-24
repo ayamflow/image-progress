@@ -1,6 +1,6 @@
 'use strict';
 
-var EventEmitter = require('component-emitter');
+var EventEmitter = require('events').EventEmitter;
 
 var ImageProgress = module.exports = function(url, params) {
     EventEmitter.call(this);
