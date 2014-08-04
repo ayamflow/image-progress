@@ -67,9 +67,11 @@ ImageProgress.prototype.onError = function(event) {
 };
 
 ImageProgress.prototype.destroy = function(event) {
-    this.request.onprogress = null;
-    this.request.onload = null;
-    this.request.onerror = null;
+    if(this.request) {
+        this.request.onprogress = null;
+        this.request.onload = null;
+        this.request.onerror = null;
+    }
     this.request = null;
     this.removeAllListeners();
 };
