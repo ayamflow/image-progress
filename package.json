@@ -1,6 +1,6 @@
 {
   "name": "image-progress",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "A wrapper for loading image via XHR and dispatching loading events.",
   "main": "index.js",
   "scripts": {

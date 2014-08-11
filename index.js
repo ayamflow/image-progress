@@ -20,7 +20,7 @@ var ImageProgress = module.exports = function(url, params) {
 
     this.request = new XMLHttpRequest();
     this.request.onprogress = this.onProgress.bind(this);
-    this.request.onload = this.onLoad.bind(this);
+    this.request.onload = this.onComplete.bind(this);
     this.request.onerror = this.onError.bind(this);
 
     if(this.options.autostart) this.load();
@@ -54,9 +54,9 @@ ImageProgress.prototype.onProgress = function(event) {
     this.emit('progress', progressEvent);
 };
 
-ImageProgress.prototype.onLoad = function(event) {
+ImageProgress.prototype.onComplete = function(event) {
     if(this.options.onLoad) this.options.onLoad(this.options);
-    this.emit('load', this.options);
+    this.emit('complete', this.options);
     if(this.options.autoclear) this.destroy();
 };
 
