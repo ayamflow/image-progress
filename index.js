@@ -1,6 +1,6 @@
 'use strict';
 
-var EventEmitter = require('events').EventEmitter;
+var EventEmitter = require('component-emitter');
 
 var ImageProgress = module.exports = function(url, params) {
     EventEmitter.call(this);
@@ -73,5 +73,5 @@ ImageProgress.prototype.destroy = function(event) {
         this.request.onerror = null;
     }
     this.request = null;
-    this.removeAllListeners();
+    this.off();
 };

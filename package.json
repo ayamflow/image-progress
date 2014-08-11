@@ -1,6 +1,6 @@
 {
   "name": "image-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for loading image via XHR and dispatching loading events.",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "devDependencies": {
     "tape": "~2.13.3",
     "tap-spec": "~0.2.0"
+  },
+  "dependencies": {
+    "component-emitter": "^1.1.3"
   }
 }
