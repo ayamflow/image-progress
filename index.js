@@ -1,6 +1,7 @@
 'use strict';
 
 var EventEmitter = require('component-emitter');
+var _ = require('lodash');
 
 var ImageProgress = module.exports = function(url, params) {
     EventEmitter.call(this);
@@ -9,16 +10,18 @@ var ImageProgress = module.exports = function(url, params) {
 
     var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
 
-    this.options = params || {};
+    this.options = _.merge({
+        autostart: false,
+        autoclear: true,
+        leading: 2,
+        jsonp: false,
+    }, param);
+
     this.options.url = url;
     
     if ( this.options.jsonp ) {
         this.options.url += (this.options.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
     }
-
-    // this.options.autostart = this.options.autostart || false;
-    this.options.autoclear = this.options.autoclear || true;
-    this.options.leading = this.options.leading || 2;
 
     this.loaded = 0;
     this.total = 0;
