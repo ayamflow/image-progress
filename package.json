@@ -23,8 +23,9 @@
     "url": "https://github.com/ayamflow/image-progress/issues"
   },
   "devDependencies": {
-    "tape": "~2.13.3",
-    "tap-spec": "~0.2.0"
+    "component-emitter": "^1.2.0",
+    "tap-spec": "~0.2.0",
+    "tape": "~2.13.3"
   },
   "dependencies": {
     "component-emitter": "^1.1.3"
