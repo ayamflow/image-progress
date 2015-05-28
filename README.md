@@ -18,7 +18,7 @@ component install ayamflow/image-progress
 
 ### 2. Use
 
-```
+```javascript
 var Progress = require('image-progress');
 
 var img = new Progress('test-img.png');
@@ -77,6 +77,10 @@ The number of decimals in the `event.progress` property.
 * ### `autoclear` (default: true)
 
 Set wether the `destroy` method should be automatically called after a `complete` or `error` event.
+
+* ### `jsonp` (default: false)
+
+Uses [jsonp](http://en.wikipedia.org/wiki/JSONP) in order to bypass [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) restrictions
 
 ## Events
 * `start`: fired when the loading starts. The event contains a reference to the `options` hash, as well as the `url`.
