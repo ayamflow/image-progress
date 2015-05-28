@@ -10,7 +10,11 @@ var ImageProgress = module.exports = function(url, params) {
     var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
 
     this.options = params || {};
-    this.options.url = url  + (this.options.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+    this.options.url = url;
+    
+    if ( this.options.jsonp ) {
+        this.options.url += (this.options.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+    }
 
     // this.options.autostart = this.options.autostart || false;
     this.options.autoclear = this.options.autoclear || true;
