@@ -15,7 +15,7 @@ var ImageProgress = module.exports = function(url, params) {
         autoclear: true,
         leading: 2,
         jsonp: false,
-    }, param);
+    }, params);
 
     this.options.url = url;
     
