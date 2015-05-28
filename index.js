@@ -7,8 +7,10 @@ var ImageProgress = module.exports = function(url, params) {
 
     if(!url) throw new Error('URL should be a valid string');
 
+    var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+
     this.options = params || {};
-    this.options.url = url;
+    this.options.url = url  + (this.options.url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
 
     // this.options.autostart = this.options.autostart || false;
     this.options.autoclear = this.options.autoclear || true;
