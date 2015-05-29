@@ -2,7 +2,7 @@
   "name": "image-progress",
   "repo": "ayamflow/image-progress",
   "description": "A wrapper for loading image via XHR and dispatching loading events.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "image",
     "progress",
